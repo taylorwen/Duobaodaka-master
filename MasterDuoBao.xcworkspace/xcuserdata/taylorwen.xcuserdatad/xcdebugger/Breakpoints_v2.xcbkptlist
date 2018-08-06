@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OneYuan/Class/Login/Controller/FindPswVC.m"
+            timestampString = "464360250.766843"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "212"
+            endingLineNumber = "212">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OneYuan/Class/Login/Controller/FindPswVC.m"
+            timestampString = "464360250.766843"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OneYuan/Class/Limite/Controller/LimitePopoverVC.m"
+            timestampString = "462378953.717826"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "509"
+            endingLineNumber = "509"
+            landmarkName = "-HighRateBuySuccessData:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LimitePopoverVC HighRateBuySuccessData:]"
+                  moduleName = "MasterDuoBao"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/taylorwen/duobaodaka-iOS/OneYuan/Class/Limite/Controller/LimitePopoverVC.m"
+                  timestampString = "464942828.551452"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "509"
+                  endingLineNumber = "509"
+                  offsetFromSymbolStart = "914">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[LimitePopoverVC HighRateBuySuccessData:]_block_invoke"
+                  moduleName = "MasterDuoBao"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/taylorwen/duobaodaka-iOS/OneYuan/Class/Limite/Controller/LimitePopoverVC.m"
+                  timestampString = "464942828.551644"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "509"
+                  endingLineNumber = "509"
+                  offsetFromSymbolStart = "70">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OneYuan/Class/Limite/Controller/LimitePopoverVC.m"
+            timestampString = "462378953.717826"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "516"
+            endingLineNumber = "516"
+            landmarkName = "-HighRateBuySuccessData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OneYuan/Class/Limite/Controller/LimitePopoverVC.m"
+            timestampString = "462378953.717826"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
+            landmarkName = "-sendData:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LimitePopoverVC sendData:]"
+                  moduleName = "MasterDuoBao"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/taylorwen/duobaodaka-iOS/OneYuan/Class/Limite/Controller/LimitePopoverVC.m"
+                  timestampString = "464942828.55338"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "453"
+                  endingLineNumber = "453"
+                  offsetFromSymbolStart = "665">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__28-[LimitePopoverVC sendData:]_block_invoke"
+                  moduleName = "MasterDuoBao"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/taylorwen/duobaodaka-iOS/OneYuan/Class/Limite/Controller/LimitePopoverVC.m"
+                  timestampString = "464942828.553535"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "453"
+                  endingLineNumber = "453"
+                  offsetFromSymbolStart = "70">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

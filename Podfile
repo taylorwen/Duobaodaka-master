@@ -1,0 +1,32 @@
+
+platform :ios, "7.0"
+
+pod 'AFNetworking'
+pod 'MBProgressHUD'
+pod 'SVPullToRefresh'
+pod 'SDWebImage'
+pod 'Surfboard'
+pod 'IPDashedLineView'
+pod 'RESideMenu'
+pod 'jastor'
+pod 'TouchJSON'
+pod 'LMDropdownView'
+pod 'FMDB'
+pod 'BTBadgeView'
+pod 'SCLAlertView-Objective-C'
+pod 'TCBlobDownload'
+pod 'ZipArchive', '~> 1.4.0'
+pod 'PDKeychainBindingsController', '~> 0.0.1'
+
+pod 'JSONModel','~> 1.1.0'
+pod 'MJExtension'
+pod 'ZWIntroductionViewController'
+pod 'DZNSegmentedControl'
+pod 'ARSegmentPager', :git => 'https://github.com/AugustRush/ARSegmentPager.git'
+pod 'IQKeyboardManager'
+pod 'LDProgressView'
+pod 'JT3DScrollView', '~> 1.0'
+pod 'MJExtension'
+pod 'HTHorizontalSelectionList', '~> 0.2.4'
+pod 'TNSexyImageUploadProgress'
+

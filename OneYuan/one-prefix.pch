@@ -1,0 +1,277 @@
+//
+//  one-prefix.pch
+//  OneYuan
+//
+//  Created by zhan wen (wenzhan2010@live.cn) on  15/6/18.
+//  Copyright (c) 2015年 Zhanwen.   Email:wenzhan2010@live.cn    All rights reserved.
+//
+
+#import "Constants.h"
+
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+
+#import "XBBaseVC.h"
+#import "UIColor+hexColor.h"
+#import "UIView+StringTag.h"
+#import "NSString+Size.h"
+#import "UITableViewCell+SeparatorLine.h"
+#import "UIImage+RenderedImage.h"
+#import "UIImageView+NoMapMode.h"
+#import "UIAlertView+Blocks.h"
+#import "XBApi.h"
+#import "XBGlobal.h"
+#import "XBParser.h"
+#import "XBToastManager.h"
+#import "Jxb_Common_Common.h"
+#import "XBDbHandler.h"
+
+#import "OneBaseVC.h"
+#import "OneBaseParser.h"
+#import "OyTool.h"
+
+#import "LoginVC.h"
+#import <JSONModel/JSONModel.h>
+#import "UserInstance.h"
+
+#import "TouchJSON/NSDictionary_JSONExtensions.h"
+#import "Jastor.h"
+#import "SVPullToRefreshView+OY_PullRefreshView.h"
+#import "UIImageView+WebCache.h"
+#import "LMDropdownView.h"
+#import "BTBadgeView.h"
+#import "AFNetworkReachabilityManager.h"
+#import <SCLAlertView.h>
+#import "ASPopUpView.h"
+#import "ASProgressPopUpView.h"
+#import "TCBlobDownload.h"
+#import "ZipArchive.h"
+#import "PDKeychainBindings.h"
+
+#import "MobClick.h"
+#import "UMFeedback.h"
+#import "WenzhanTool.h"
+#import "LDProgressView.h"
+#import "AttributedLabel.h"
+#import "NJKWebViewProgress.h"
+#import "MJExtension.h"
+#import "UMSocial.h"
+#import "NSString+MD5.h"
+#import "NSData+AES.h"
+#import "GTMBase64.h"
+#import "UMSocialSnsService.h"
+#import "UIView+Frame.h"
+#import "UIViewController+MJPopupViewController.h"
+
+#define kDidChargeSuccess       @"kDidChargeSuccess"
+#define kDidNotifyFromBack      @"kDidNotifyFromBack"
+#define kDidNotifyReloadNewest  @"kDidNotifyReloadNewest"
+#define kLoginUsername          @"kLoginUsername"
+#define kNoMapMode              @"kNoMapMode"
+#define kDidLoginOk             @"kDidLoginOk"
+#define kDidAddCart             @"kDidAddCart"
+#define kDidAddCartOpt          @"kDidAddCartOpt"
+#define kDidAddCartSearch       @"kDidAddCartSearch"
+#define kDidShowNewPro          @"kDidShowNewPro"
+#define kDidNotifyApns          @"kDidNotifyApns"
+#define kDidReloadUser          @"kdidReloadUser"
+#define kDidShowCart            @"kDidShowCart"
+#define kSaveLibVersion         @"kSaveLibVersion"
+#define kOYCommonUser           @"kOYCommonUser"
+#define kDidUserLogout          @"kDidUserLogout"
+#define kDidRefreshRanking      @"kDidRefreshRanking"
+#define kDidRefreshNewLottery   @"kDidRefreshNewLottery"
+
+//#define oyBaseNewUrl              @"http://api.duobaodaka.com/"                     //测试环境
+//#define oyBasePHPUrl              @"http://test.duobaodaka.com/"                    //测试环境
+//#define oyImageBaseUrl            @"http://test.duobaodaka.com/statics/uploads/"    //图片拼接测试路径
+
+#define oyBaseNewUrl                @"http://furwqkpb.duobaodaka.com/"            //生产环境
+#define oyBasePHPUrl                @"http://duobaodaka.com/"                     //生产环境
+//#define oyImageBaseUrl              @"http://121.41.101.108/statics/uploads/"     //图片拼接路径baseURL
+#define oyImageBaseUrl              @"http://duobaodaka.com/statics/uploads/"     //图片拼接路径baseURL
+
+//register---------------------------------------------------------------------------------------------------------------------------------------
+//  1.01获取手机验证码
+#define oyGetCodeInfo           @"api/member/get_code_info.html"
+//  1.02用户注册
+#define oyRegister              @"api/member/member_register.html"
+//  1.03用户登录
+#define oyLogin                 @"api/member/member_login.html"
+//  1.04找回密码
+#define oyFindPassword          @"api/member/member_update_pwd.html"
+//  1.05找回密码请求验证码
+#define oyFindCode              @"api/member/find_pwd_code.html"
+//  1.06通过用户ID获取用户信息
+#define oyGetUserInfo           @"api/member/get_member_info.html"
+//  1.07获取用户夺宝记录
+#define oyGetUserBuyHistory     @"api/member/get_member_gorecord.html"
+//  1.08获取商品的获得者信息
+#define oyGetProductOwnerInfo   @"api/member/get_huode_member.html"
+//  1.09查询用户获得的奖品
+#define oyGetUserOwnedProduct   @"api/index/get_member_shopinfo.html"
+//  1.10查询用户的账户明细
+#define oyGetMineAccountDetail  @"api/member/get_member_account.html"
+//  1.11获取用户收获地址
+#define oyAddressUrl            @"api/address/get_member_address.html"
+//  1.12添加新的收获地址
+#define oyAddreasAddUrl         @"api/address/add_member_address.html"
+//  1.13删除收获地址
+#define oyAddressDel            @"api/address/delete_member_address.html"
+//  1.14修改收获地址
+#define oyAddressEdit           @"api/address/update_member_address.html"
+//  1.15设置默认收获地址
+#define oyAddressSetDefault     @"api/address/set_default_address.html"
+//  1.16更改密码
+#define oyChangeMyPassword      @"api/member/member_modify_password.html"
+//  1.17设置昵称
+#define oyEditMyUsername        @"api/member/member_modify_nick.html"
+//  1.18设置签名
+#define oyEditMyQianming        @"api/member/member_modify_qianming.html"
+//  1.19设置头像
+#define oyGetUploadUserAvatar   @"api/member/member_modify_img.html"
+
+//  2.01获取商品分类列表
+#define oyGetCategory           @"api/index/get_category.html"
+//  2,02获取幻灯片列表
+#define oyAdList                @"api/index/get_wap.html"
+//  2.03获取商品列表1
+#define oyGetProductsList       @"api/index/get_shop_list.html"
+//  2.04获取商品列表
+#define  oyGetCateProList       @"api/index/get_shop_cat_list.html"
+//  2.05获取商品详情
+#define oyGetProductsDetail     @"api/index/get_shop_detail.html"
+//  2.06获取商品图文详情
+#define oyGetShopContent        @"api/index/get_shop_content.html"
+//  2.07获取往期揭晓商品列表
+#define oyHistoryGoods          @"api/index/get_history_shop.html"
+//  2.08查询购买商品的所有记录
+#define oyGoodsBuyHistory       @"api/index/get_shop_gorecord.html"
+//  2.09最新揭晓
+#define oyGetNewLottery         @"api/index/get_bestnew_lottery.html"
+//  2.10获取往期揭晓商品列表
+#define oyGetHistoryShop        @"api/index/get_history_shop.html"
+//  2.11首页最新揭晓
+#define oyNewest                @"api/index/get_bestnew_lottery.html"
+//  2.12获取热门商品
+#define oyHotestProduct         @"api/index/get_shop_list.html"
+//  2.13获取用户购买商品的夺宝码
+#define oyGetUserCode           @"api/member/get_member_goucode.html"
+//  2.14获取限时揭晓商品列表
+#define oyGetLtdProduct         @"api/index/get_xsjx_shopinfo.html"
+//  2.15获取限时揭晓往期商品列表
+#define oyGetHistoryLtdProduct  @"api/index/get_xsjx_shopinfo.html"
+//  2.16获取十元专区商品列表
+#define oyGetTenProList         @"api/index/get_tenmoney_shop.html"
+
+//  3.01获取商品的晒单列表
+#define oyShowGoodsList         @"api/shaidan/get_shop_shaidan.html"
+//  3.02获取晒单的内容
+#define oyGetShowGoodsDetail    @"api/shaidan/get_shaidan_content.html"
+//  3.03获取单条晒单记录的详细信息
+#define oyGetSingleDetail       @"api/shaidan/get_shaidan_detail.html"
+
+//  4.01获取用户充值接口
+#define oyGetMemberChargeResult @"api/member/member_billng_result.html"
+//  4.02生成订单
+#define oyGetMemberOrderList    @"api/member/member_init_order.html"
+//  4.03购买成功后上传订单数据
+#define oyGetMemberBuyList      @"api/member/member_go_shop.html"
+
+//  5.01获取本机IP地址
+#define oyGetMineIPAddress      @"http://1111.ip138.com/ic.asp"
+//  5.02设置中心
+#define oyHelpCenter            @"http://m.duobaodaka.com/index.php/mobile/mobile/common_problem_app"
+//  5.03服务条款
+#define oyServiceList           @"http://m.duobaodaka.com/index.php/mobile/mobile/service_agreement_app"
+//  5.04隐私协议
+#define oySecureList            @"http://m.duobaodaka.com/index.php/mobile/mobile/service_agreement_app"
+//  5.05未揭晓的计算详情
+#define oyGetunCalculate        @"http://duobaodaka.com/app_html/compute_rule/"
+
+
+
+//带加密参数的API---PHP新接口---------------------------------------------------------------------------------------
+//  1.1充值记录
+#define oyNewGetChargeRecord               @"api1/account.php"
+//  1.2账户明细
+#define oyNewGetAccountDetail              @"api1/account.php"
+//  1.3夺宝记录
+#define oyNewGetBuyRecord                  @"api1/account.php"
+//  1.4首页中奖商品弹出框
+#define oyNewGetWinProduct                 @"api1/index.php/shop/getQuerenShops"
+
+//  2.1晒单图片上传（单个图片上传）
+#define oyNewPostShowImage                 @"index.php/member/home_client/singphotoup"
+//  2.2发布晒单内容（图片路径和文字）
+#define oyNewGetShowImageContent           @"api1/index.php/shaidan/shaidan"
+//  2.3获取未晒单商品列表
+#define oyNewGetUnShowPro                  @"api1/index.php/shaidan/getNoShaidan"         //已使用，已调通
+
+//  3.1限时商品列表（限时活动）
+#define oyNewGetLimiteGoodList             @"api1/index.php/shop/getXianshiShopList"
+//  3.2限时商品状态（限时活动）
+#define oyNewGetLimiteGoodStatus           @"api1/index.php/shop/getDuobaoInfo"
+//  3.3验证主动分享用户
+#define oyNewGetSharedUser                 @"api1/index.php/activity/getUserHuodeNum"
+//  3.6获取限时揭晓三个商品
+#define oyNewGetLimite3Pro                 @"api1/index.php/shop/getXianshiProducts"      //已使用，已调通
+
+//  4.1最近夺宝记录
+#define oyNewGetRecentBuyRecord            @"api1/index.php/shop/getShopHis"
+//  4.2最近中奖记录
+#define oyNewGetRecentWinRecord            @"api1/index.php/shop/getKaijiangHis"
+//  4.3确认收货地址
+#define oyNewConfirmAddressStatus          @"api1/index.php/shop/querenshop"
+//  4.4获取中奖商品物流地址详情
+#define oyNewGetTranDetail                 @"api1/index.php//shop/getHuodeShop"
+//  4.5物流查询
+#define oyNewGetTransportInfo              @"api1/index.php/shop/queryExpress"
+//  4.6确认收货
+#define oyNewGetConfirmGoods               @"api1/index.php/shop/queRenShouHuo"
+
+//  5.1获取当天指定商品夺宝记录（限时活动）
+#define oyNewGetLimitedActivityBuyRecord   @"api1/index.php/activity/getDuobaoHis"
+//  5.2获取限时揭晓活动列表
+#define oyNewGetLimitedActivityUserInfo    @"api1/index.php/activity/getUserInfo"
+//  5.3获取用户中奖次数
+#define oyNewGetUserWinTimes               @"api1/index.php/activity/getUserHuodeNum"
+//  5.4获取用户参与分享次数
+#define oyNewGetUserShareTimes             @"api1/index.php/activity/fenxiang_canyu"
+//  5.5分享后赠送的一次夺宝机会
+#define oyNewGetautoBuy                    @"api1/activity/autoGoDuobao"
+//  5.6显示商品客户端触发揭晓
+#define oyNewGetautoLottery                @"index.php/go/autolottery/autolottery_ret_install_client"
+
+//  6.1获取iOS发布状态（用于判断iOS是否已在AppStore发布）
+#define oyNewGetPublishStatus               @"api1/index.php/system/getPublishStats"         //已使用，已调通
+//  6.2新用户引导iPhone6购买入口接口
+#define oyNewGetGuidePro                    @"api1/index.php/system/getAdRegister"             //已使用，已调通
+//  6.3获取限时揭晓banner活动
+#define oyNewGetLimitedActivity             @"api1/index.php/system/getBannerActivity"       //已使用，已调通
+//  6.4获取开机广告
+#define oyNewGetStartAds                    @"api1/index.php/system/get_guide_pic"           //已使用，已调通
+//  6.5获取注册页banner
+#define oyNewGetRegBanner                   @"api1/index.php/system/get_banner_register"     //已使用，已调通
+//  6.6检查更新(未上线版)
+#define oyNewCheckUpdates                   @"http://down.duobaodaka.com/ios_update.php"    //已使用，已调通
+//  6.7超级限时模块的分享链接
+#define oyNewGetLimiteSharedURL             @"app_html/activity/201508/super_xianshi/join_succeed.html?mobile="
+//  6.8获取全站最近一百条记录
+#define oyNewGet100Recode                   @"api1/content.php"        //已使用
+//  7.1支付宝支付后与与服务器的验证
+#define oyNewVerifyPaymentResult            @"api1/index.php/shop/getAliPayStatus"
+
+//  8.1注册接口验证码检测
+#define oyNewVerifySeverCode                @"api1/index.php/member/checkRequestCode"
+//  8.2找回密码接口验证码检测
+#define oyNewFindVerifyServerCode           @"api1/index.php/member/checkPassCode"
+//判断App是否已经上线
+#define oyJustifyAppStore                   @"api1/index.php/system/getPublishStats"
+//App上线前的商品列表
+#define oyOfflineProductlist                @"api1/index.php/shop/get_shop_list"
+//APP上线前的最新揭晓
+#define oyGetNewestLotteryOffline           @"api1/index.php/shop/getNewestJiexiaoForIos"
+//获取客服QQ号码
+#define oyGetServiceQQNumber                @"api1/index.php/system/getKefuQQ"
+
